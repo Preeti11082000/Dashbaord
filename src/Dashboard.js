@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
-
+import Select from "react-select";
 import ReactApexChart from "react-apexcharts";
 import BarchartComponent from "./components/bar";
 
@@ -9,15 +9,21 @@ const Dashboard = () => {
     "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
   );
   const chartData = {
-    series: [44, 55, 13, 43, 22],
+    series: [8, 65, 12, 15],
     options: {
       chart: {
         type: "pie",
       },
-      labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"],
+
+      labels: ["Customer1", "Customer2", "Customer3", "Customer4"],
     },
   };
-
+  const options = [
+    { value: "quaterly", label: "quaterly" },
+    { value: "yearly", label: "yearly" },
+    { value: "monthly", label: "monthly" },
+    { value: "daily", label: "daily" },
+  ];
   const changeStyle = () => {
     if (
       style == "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
@@ -156,7 +162,7 @@ const Dashboard = () => {
                 aria-labelledby="headingPages"
                 data-parent="#accordionSidebar"
               >
-                <div className="bg-primary py-2 collapse-inner rounded">
+                <div className="bg-primary py-2 collapse-inner">
                   <a className="collapse-item" href="login.html">
                     Login
                   </a>
@@ -193,7 +199,15 @@ const Dashboard = () => {
                   <i className="fa fa-bars"></i>
                 </button>
 
-                <h3 style={{fontWeight:"bold",color:"black",marginLeft:"8px"}}>Hello Shahrukh <span><i classNmae="fas fa-hand-wave"></i></span></h3>
+                <h3
+                  style={{
+                    fontWeight: "bold",
+                    color: "black",
+                    marginLeft: "8px",
+                  }}
+                >
+                  Hello Shahrukh <span>&#x1F44B;</span>
+                </h3>
 
                 {/*  <!-- Topbar Search --> */}
                 <form className="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 navbar-search">
@@ -201,7 +215,7 @@ const Dashboard = () => {
                     <input
                       type="text"
                       className="form-control bg-light border-0 small"
-                      placeholder="Search for..."
+                      placeholder="Search"
                       aria-label="Search"
                       aria-describedby="basic-addon2"
                     />
@@ -219,11 +233,6 @@ const Dashboard = () => {
 
               {/* <!-- Begin Page Content --> */}
               <div className="container-fluid">
-                {/*  <!-- Page Heading --> */}
-                {/* <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                  <h1 className="h3 mb-0 text-gray-800">Hello Shahrukh</h1>
-                </div> */}
-
                 {/*  <!-- Content Row --> */}
                 <div className="row">
                   {/*  <!-- Earnings (Monthly) Card Example --> */}
@@ -232,7 +241,14 @@ const Dashboard = () => {
                       <div className="card-body">
                         <div className="row no-gutters align-items-center">
                           <div className="col-auto">
-                            <i className="fas fa-dollar-sign fa-4x text-gray-300"></i>
+                            <div className="circle-icon">
+                              <div className="circle-background">
+                                <i
+                                  style={{ color: "green" }}
+                                  className="fas fa-dollar-sign fa-4x"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
                           <div style={{ marginLeft: "45px" }} className="col">
                             <div className="font-weight-bold text-primary text-uppercase mb-1">
@@ -242,6 +258,11 @@ const Dashboard = () => {
                               $198K
                             </div>
                             <div className="text-xs mb-0 text-gray-800">
+                              <span
+                                style={{ color: "green", fontSize: "10px" }}
+                              >
+                                &uarr;
+                              </span>{" "}
                               37.8% this month
                             </div>
                           </div>
@@ -256,7 +277,14 @@ const Dashboard = () => {
                       <div className="card-body">
                         <div className="row no-gutters align-items-center">
                           <div className="col-auto">
-                            <i className="fas fa-dollar-sign fa-4x text-gray-300"></i>
+                            <div className="circle-icon">
+                              <div className="circle-background">
+                                <i
+                                  style={{ color: "purple" }}
+                                  className="fas fa-clipboard fa-4x"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
                           <div style={{ marginLeft: "45px" }} className="col">
                             <div className="font-weight-bold text-primary text-uppercase mb-1">
@@ -266,7 +294,7 @@ const Dashboard = () => {
                               $2.4K
                             </div>
                             <div className="text-xs mb-0 text-gray-800">
-                              +2% this month
+                              &darr; 2% this month
                             </div>
                           </div>
                         </div>
@@ -280,7 +308,14 @@ const Dashboard = () => {
                       <div className="card-body">
                         <div className="row no-gutters align-items-center">
                           <div className="col-auto">
-                            <i className="fas fa-clipboard fa-4x text-gray-300"></i>
+                            <div className="circle-icon">
+                              <div className="circle-background">
+                                <i
+                                  style={{ color: "blue" }}
+                                  className="fa fa-balance-scale fa-4x"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
                           <div style={{ marginLeft: "45px" }} className="col">
                             <div className="font-weight-bold text-primary text-uppercase mb-1">
@@ -290,7 +325,7 @@ const Dashboard = () => {
                               $2.4K
                             </div>
                             <div className="text-xs mb-0 text-gray-800">
-                              +2% this month
+                              &darr; 2% this month
                             </div>
                           </div>
                         </div>
@@ -304,7 +339,14 @@ const Dashboard = () => {
                       <div className="card-body">
                         <div className="row no-gutters align-items-center">
                           <div className="col-auto">
-                            <i className="fas fa-clipboard fa-4x text-gray-300"></i>
+                            <div className="circle-icon">
+                              <div className="circle-background">
+                                <i
+                                  style={{ color: "red" }}
+                                  className="fa fa-shopping-cart fa-4x"
+                                ></i>
+                              </div>
+                            </div>
                           </div>
                           <div style={{ marginLeft: "45px" }} className="col">
                             <div className="font-weight-bold text-primary text-uppercase mb-1">
@@ -314,7 +356,7 @@ const Dashboard = () => {
                               $89K
                             </div>
                             <div className="text-xs mb-0 text-gray-800">
-                              +11% this month
+                              &uarr; 11% this month
                             </div>
                           </div>
                         </div>
@@ -328,16 +370,23 @@ const Dashboard = () => {
                 <div className="row">
                   {/*   <!-- Area Chart --> */}
                   <div className="col-xl-8 col-lg-7">
-                    <div className="card shadow mb-4">
+                    <div className="card shadow mb-2">
                       {/*  <!-- Card Header - Dropdown --> */}
-                      <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-primary">
-                          Overview
-                        </h6>
-                        <h6 className="m-0 font-weight-bold text-primary">
-                          Monthly Earning
-                        </h6>
+                      <div className="card-header d-flex justify-content-between align-items-center">
+                        <div>
+                          <h6
+                            style={{ color: "black" }}
+                            className="m-0 font-weight-bold"
+                          >
+                            Overview
+                          </h6>
+                          <span>Monthly Earning</span>
+                        </div>
+                        <div style={{ width: "200px" }}>
+                          <Select defaultValue={options[0]} options={options} />
+                        </div>
                       </div>
+
                       {/*  <!-- Card Body --> */}
                       <div className="card-body">
                         <div className="chart-area">
@@ -375,17 +424,20 @@ const Dashboard = () => {
                   <div className="col-xl-4 col-lg-5">
                     <div className="card shadow mb-4">
                       {/*  <!-- Card Header - Dropdown --> */}
-                      <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-primary">
+                      <div className="card-header py-3 align-items-center ">
+                        <h6
+                          style={{ color: "black" }}
+                          className="m-0 font-weight-bold"
+                        >
                           Customers
                         </h6>
+                        <span> Customers that can buy products</span>
                       </div>
-                      <div style={{ height: "360px" }} className="card-body">
+                      <div style={{ minHeight: "350px" }} className="card-body">
                         <ReactApexChart
                           options={chartData.options}
                           series={chartData.series}
                           type="pie"
-                          height="500"
                         />
                       </div>
                     </div>
