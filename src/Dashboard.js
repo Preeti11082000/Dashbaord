@@ -4,10 +4,10 @@ import "./Dashboard.css";
 import ReactApexChart from "react-apexcharts";
 import BarchartComponent from "./components/bar";
 
-const Dashboard= () => {
-    const [style, setStyle] = useState(
-        "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-      );
+const Dashboard = () => {
+  const [style, setStyle] = useState(
+    "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+  );
   const chartData = {
     series: [44, 55, 13, 43, 22],
     options: {
@@ -17,7 +17,6 @@ const Dashboard= () => {
       labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"],
     },
   };
-
 
   const changeStyle = () => {
     if (
@@ -72,9 +71,6 @@ const Dashboard= () => {
               </a>
             </li>
 
-          
-      
-
             {/*  <!-- Nav Item - Pages Collapse Menu --> */}
             <li className="nav-item">
               <a
@@ -95,7 +91,6 @@ const Dashboard= () => {
                 data-parent="#accordionSidebar"
               >
                 <div className="bg-primary py-2 collapse-inner rounded">
-              
                   <a className="collapse-item" href="buttons.html">
                     Buttons
                   </a>
@@ -126,7 +121,6 @@ const Dashboard= () => {
                 data-parent="#accordionSidebar"
               >
                 <div className="bg-primary py-2 collapse-inner">
-                
                   <a className="collapse-item" href="utilities-color.html">
                     Colors
                   </a>
@@ -142,10 +136,6 @@ const Dashboard= () => {
                 </div>
               </div>
             </li>
-
-       
-
-      
 
             {/*  <!-- Nav Item - Pages Collapse Menu --> */}
             <li className="nav-item">
@@ -166,8 +156,7 @@ const Dashboard= () => {
                 aria-labelledby="headingPages"
                 data-parent="#accordionSidebar"
               >
-                <div className="bg-white py-2 collapse-inner rounded">
-               
+                <div className="bg-primary py-2 collapse-inner rounded">
                   <a className="collapse-item" href="login.html">
                     Login
                   </a>
@@ -178,7 +167,7 @@ const Dashboard= () => {
                     Forgot Password
                   </a>
                   <div className="collapse-divider"></div>
-                  <h6 className="collapse-header">Other Pages:</h6>
+
                   <a className="collapse-item" href="404.html">
                     404 Page
                   </a>
@@ -188,95 +177,8 @@ const Dashboard= () => {
                 </div>
               </div>
             </li>
-
-            {/* <!-- Nav Item - Charts --> */}
-            <li className="nav-item">
-              <a
-                className="nav-link collapsed"
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapsePages"
-                aria-expanded="true"
-                aria-controls="collapsePages"
-              >
-                <i className="fas fa-fw fa-folder"></i>
-                <span>Promote</span>
-              </a>
-              <div
-                id="collapsePages"
-                className="collapse"
-                aria-labelledby="headingPages"
-                data-parent="#accordionSidebar"
-              >
-                <div className="bg-white py-2 collapse-inner rounded">
-               
-                  <a className="collapse-item" href="login.html">
-                    Login
-                  </a>
-                  <a className="collapse-item" href="register.html">
-                    Register
-                  </a>
-                  <a className="collapse-item" href="forgot-password.html">
-                    Forgot Password
-                  </a>
-                  <div className="collapse-divider"></div>
-                  <h6 className="collapse-header">Other Pages:</h6>
-                  <a className="collapse-item" href="404.html">
-                    404 Page
-                  </a>
-                  <a className="collapse-item" href="blank.html">
-                    Blank Page
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            {/*  <!-- Nav Item - Tables --> */}
-            <li className="nav-item">
-              <a
-                className="nav-link collapsed"
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapsePages"
-                aria-expanded="true"
-                aria-controls="collapsePages"
-              >
-                <i className="fas fa-fw fa-folder"></i>
-                <span>Help</span>
-              </a>
-              <div
-                id="collapsePages"
-                className="collapse"
-                aria-labelledby="headingPages"
-                data-parent="#accordionSidebar"
-              >
-                <div className="bg-white py-2 collapse-inner rounded">
-               
-                  <a className="collapse-item" href="login.html">
-                    Login
-                  </a>
-                  <a className="collapse-item" href="register.html">
-                    Register
-                  </a>
-                  <a className="collapse-item" href="forgot-password.html">
-                    Forgot Password
-                  </a>
-                  <div className="collapse-divider"></div>
-                  <h6 className="collapse-header">Other Pages:</h6>
-                  <a className="collapse-item" href="404.html">
-                    404 Page
-                  </a>
-                  <a className="collapse-item" href="blank.html">
-                    Blank Page
-                  </a>
-                </div>
-              </div>
-            </li>
-
-     
-       
           </ul>
-     
+
           <div id="content-wrapper" className="d-flex flex-column">
             {/*  <!-- Main Content --> */}
             <div id="content">
@@ -291,8 +193,10 @@ const Dashboard= () => {
                   <i className="fa fa-bars"></i>
                 </button>
 
+                <h3 style={{fontWeight:"bold",color:"black",marginLeft:"8px"}}>Hello Shahrukh <span><i classNmae="fas fa-hand-wave"></i></span></h3>
+
                 {/*  <!-- Topbar Search --> */}
-                <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <form className="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 navbar-search">
                   <div className="input-group">
                     <input
                       type="text"
@@ -504,6 +408,6 @@ const Dashboard= () => {
       </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
