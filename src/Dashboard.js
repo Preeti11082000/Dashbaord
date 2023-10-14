@@ -3,7 +3,7 @@ import "./Dashboard.css";
 import Select from "react-select";
 import ReactApexChart from "react-apexcharts";
 import BarchartComponent from "./components/bar";
-
+import BasicTable from "./components/table";
 const Dashboard = () => {
   const [style, setStyle] = useState(
     "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
@@ -87,7 +87,7 @@ const Dashboard = () => {
                 aria-expanded="true"
                 aria-controls="collapseTwo"
               >
-                <i className="fas fa-fw fa-cog"></i>
+                <i style={{color:"white"}} className="fas fa-fw fa-cog"></i>
                 <span>Products</span>
               </a>
               <div
@@ -96,12 +96,12 @@ const Dashboard = () => {
                 aria-labelledby="headingTwo"
                 data-parent="#accordionSidebar"
               >
-                <div className="bg-primary py-2 collapse-inner rounded">
+                <div className="bg-white py-2 collapse-inner rounded">
                   <a className="collapse-item" href="buttons.html">
-                    Buttons
+                   Product 1
                   </a>
                   <a className="collapse-item" href="cards.html">
-                    Cards
+                  Product 2
                   </a>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const Dashboard = () => {
                 aria-expanded="true"
                 aria-controls="collapseUtilities"
               >
-                <i className="fas fa-fw fa-wrench"></i>
+                <i style={{color:"white"}} class="fa fa-users"></i>
                 <span>Customers</span>
               </a>
               <div
@@ -126,18 +126,12 @@ const Dashboard = () => {
                 aria-labelledby="headingUtilities"
                 data-parent="#accordionSidebar"
               >
-                <div className="bg-primary py-2 collapse-inner">
+                <div className="bg-white py-2 collapse-inner rounded">
                   <a className="collapse-item" href="utilities-color.html">
-                    Colors
+                 Customer 1
                   </a>
                   <a className="collapse-item" href="utilities-border.html">
-                    Borders
-                  </a>
-                  <a className="collapse-item" href="utilities-animation.html">
-                    Animations
-                  </a>
-                  <a className="collapse-item" href="utilities-other.html">
-                    Other
+                   Customer 2
                   </a>
                 </div>
               </div>
@@ -153,7 +147,7 @@ const Dashboard = () => {
                 aria-expanded="true"
                 aria-controls="collapsePages"
               >
-                <i className="fas fa-fw fa-folder"></i>
+                <i style={{color:"white"}} className="fa fa-money"></i>
                 <span>Income</span>
               </a>
               <div
@@ -162,27 +156,38 @@ const Dashboard = () => {
                 aria-labelledby="headingPages"
                 data-parent="#accordionSidebar"
               >
-                <div className="bg-primary py-2 collapse-inner">
+                <div className="bg-white py-2 collapse-inner rounded">
                   <a className="collapse-item" href="login.html">
-                    Login
+                    Income gross
                   </a>
                   <a className="collapse-item" href="register.html">
-                    Register
+                    Income increase
                   </a>
-                  <a className="collapse-item" href="forgot-password.html">
-                    Forgot Password
-                  </a>
-                  <div className="collapse-divider"></div>
-
-                  <a className="collapse-item" href="404.html">
-                    404 Page
-                  </a>
-                  <a className="collapse-item" href="blank.html">
-                    Blank Page
-                  </a>
+                 
                 </div>
               </div>
             </li>
+            <li className="nav-item">
+            <a
+                className="nav-link collapsed"
+                href="#"
+               
+              >
+               
+               <i style={{color:"white"}} className="fa fa-envelope"></i>
+                <span>Promote</span>
+              </a> 
+              </li>
+              <li className="nav-item">
+              <a
+                className="nav-link collapsed"
+                href="#"
+                
+              >
+                <i style={{color:"white"}} className="fa fa-money"></i>
+                <span>Help</span>
+              </a>
+              </li>
           </ul>
 
           <div id="content-wrapper" className="d-flex flex-column">
@@ -442,6 +447,9 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+                <div style={{marginBottom:"20px"}} className="row">
+                <BasicTable />
                 </div>
               </div>
             </div>
